@@ -11,5 +11,9 @@ module.exports = {
         ],
         "space-before-function-paren": ["error", "never"],
         "array-element-newline": ["error", "always"]
+    },
+    "env": {
+        "node": true,
+        "es6": true
     }
 };
