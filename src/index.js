@@ -1,16 +1,16 @@
 'use strict'
 
-function isObject(currentValue) {
-    const currentValueKeys = Object.keys(currentValue)
-    return typeof currentValue === 'object' && Array.isArray(currentValueKeys) && currentValueKeys.length > 0
+function isObject(mayBeObject) {
+    const keys = Object.keys(mayBeObject)
+    return typeof mayBeObject === 'object' && Array.isArray(keys) && keys.length > 0
 }
 
 const flattenkeys = obj => {
     let flattened = []
     Object.keys(obj).forEach(key => {
-        const currentValue = obj[key]
-        if (isObject(currentValue)) {
-            const internalKeys = flattenkeys(currentValue)
+        const value = obj[key]
+        if (isObject(value)) {
+            const internalKeys = flattenkeys(value)
             internalKeys.forEach(internalKey => {
                 flattened.push(`${key}.${internalKey}`)
             })
