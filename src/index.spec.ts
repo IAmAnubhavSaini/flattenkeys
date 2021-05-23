@@ -1,11 +1,11 @@
-"use strict";
 /* global describe it */
-Object.defineProperty(exports, "__esModule", { value: true });
-var chai_1 = require("chai");
-var index_1 = require("./index");
-describe('flattenkeys', function () {
-    it('can flatten object to get keys successfully', function () {
-        var successfulCases = [
+
+import {expect} from 'chai';
+import {flattenkeys} from "./index";
+
+describe('flattenkeys', () => {
+    it('can flatten object to get keys successfully', () => {
+        const successfulCases = [
             {
                 expected: [
                     'a',
@@ -15,7 +15,7 @@ describe('flattenkeys', function () {
                     'b.e.h.i',
                     'd'
                 ],
-                obj: { a: 'a', b: { c: 'c', e: { f: 'f', g: 'g', h: { i: 'i' } } }, d: 'd' }
+                obj: {a: 'a', b: {c: 'c', e: {f: 'f', g: 'g', h: {i: 'i'}}}, d: 'd'}
             },
             {
                 expected: [
@@ -25,7 +25,7 @@ describe('flattenkeys', function () {
                     'b.e.g',
                     'd'
                 ],
-                obj: { a: 'a', b: { c: 'c', e: { f: 'f', g: 'g' } }, d: 'd' }
+                obj: {a: 'a', b: {c: 'c', e: {f: 'f', g: 'g'}}, d: 'd'}
             },
             {
                 expected: [
@@ -34,7 +34,7 @@ describe('flattenkeys', function () {
                     'b.e.f',
                     'd'
                 ],
-                obj: { a: 'a', b: { c: 'c', e: { f: 'f' } }, d: 'd' }
+                obj: {a: 'a', b: {c: 'c', e: {f: 'f'}}, d: 'd'}
             },
             {
                 expected: [
@@ -42,13 +42,13 @@ describe('flattenkeys', function () {
                     'b.c',
                     'd'
                 ],
-                obj: { a: 'a', b: { c: 'c' }, d: 'd' }
+                obj: {a: 'a', b: {c: 'c'}, d: 'd'}
             }
         ];
-        successfulCases.map(function (testCase) {
-            var actual = index_1.flattenkeys(testCase.obj);
-            chai_1.expect(actual).to.deep.equal(testCase.expected);
+
+        successfulCases.map(testCase => {
+            const actual = flattenkeys(testCase.obj);
+            expect(actual).to.deep.equal(testCase.expected);
         });
     });
 });
-//# sourceMappingURL=index.spec.js.map

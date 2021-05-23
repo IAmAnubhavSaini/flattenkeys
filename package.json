@@ -1,28 +1,29 @@
 {
-  "name": "flattenkeys",
-  "version": "1.0.0",
-  "description": "Flatten out keys of an object - node module",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "jasmine"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gitfaf/flattenkeys.git"
-  },
-  "keywords": [],
-  "author": "Git Faf <git.faf@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gitfaf/flattenkeys/issues"
-  },
-  "homepage": "https://github.com/gitfaf/flattenkeys#readme",
-  "devDependencies": {
-    "@types/chai": "^4.2.18",
-    "@types/jasmine": "^3.7.4",
-    "@types/node": "^15.6.0",
-    "chai": "^4.3.4",
-    "jasmine": "^3.7.0",
-    "typescript": "^4.2.4"
-  }
+    "name": "flattenkeys",
+    "version": "1.0.0",
+    "description": "Flatten out keys of an object - node module",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "jasmine",
+        "build": "node_modules/.bin/tsc --project tsconfig.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gitfaf/flattenkeys.git"
+    },
+    "keywords": [],
+    "author": "Git Faf <git.faf@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/gitfaf/flattenkeys/issues"
+    },
+    "homepage": "https://github.com/gitfaf/flattenkeys#readme",
+    "devDependencies": {
+        "@types/chai": "^4.2.18",
+        "@types/jasmine": "^3.7.4",
+        "@types/node": "^15.6.0",
+        "chai": "^4.3.4",
+        "jasmine": "^3.7.0",
+        "typescript": "^4.2.4"
+    }
 }

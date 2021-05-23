@@ -1,24 +1,25 @@
-'use strict'
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.flattenkeys = void 0;
 function isObject(mayBeObject) {
-    const keys = Object.keys(mayBeObject)
-    return typeof mayBeObject === 'object' && Array.isArray(keys) && keys.length > 0
+    var keys = Object.keys(mayBeObject);
+    return typeof mayBeObject === 'object' && Array.isArray(keys) && keys.length > 0;
 }
-
-const flattenkeys = obj => {
-    let flattened = []
-    Object.keys(obj).forEach(key => {
-        const value = obj[key]
+var flattenkeys = function (obj) {
+    var flattened = [];
+    Object.keys(obj).forEach(function (key) {
+        var value = obj[key];
         if (isObject(value)) {
-            const internalKeys = flattenkeys(value)
-            internalKeys.forEach(internalKey => {
-                flattened.push(`${key}.${internalKey}`)
-            })
-        } else {
-            flattened.push(key)
+            var internalKeys = flattenkeys(value);
+            internalKeys.forEach(function (internalKey) {
+                flattened.push(key + "." + internalKey);
+            });
         }
-    })
-    return flattened
-}
-
-module.exports = flattenkeys
+        else {
+            flattened.push(key);
+        }
+    });
+    return flattened;
+};
+exports.flattenkeys = flattenkeys;
+//# sourceMappingURL=index.js.map
